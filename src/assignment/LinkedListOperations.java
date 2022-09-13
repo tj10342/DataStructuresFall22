@@ -24,9 +24,27 @@ public class LinkedListOperations {
 	 */
 	public boolean isPalindrome(DoublyLinkedList list)
 	{
+		boolean bool =true;
+		Node beginning = list.head;
+		Node end = list.tail;
+		int count =0;
 		/*** *** Write YOUR CODE HERE *** ***/
+		if (list.size == (1 | 2)) {
+			bool = false;
+			
+		}
+		else if(list.size >2) {
+			while (beginning.next != null) {
+				
+				
+			}
+		
+			
+		
+		
+		}
 	 
-	    return true;
+	    return bool;
 	}
 
 }
