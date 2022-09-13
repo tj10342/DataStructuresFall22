@@ -26,25 +26,27 @@ public class LinkedListOperations {
 	{
 		boolean bool =true;
 		Node beginning = list.head;
-		Node end = list.tail;
+		//Node end = list.tail;
 		int count =0;
 		/*** *** Write YOUR CODE HERE *** ***/
-		if (list.size == (1 | 2)) {
-			bool = false;
-			
-		}
-		else if(list.size >2) {
-			while (beginning.next != null) {
-				
-				
-			}
-		
-			
-		
-		
-		}
+		if (beginning == null)
+    	return true;
+ 
+    // Find rightmost node
+    Node end = beginning;
+    while (end.next != null)
+		end = end.next;
+ 
+    while (beginning != end)
+    {
+        if (beginning.data != end.data)
+            return false;
+ 
+		beginning = beginning.next;
+        end = end.previous;
+    }
 	 
-	    return bool;
+	    return true;
 	}
 
 }
