@@ -11,7 +11,26 @@ public class LinkedListOperations {
     */ 
 	public void reverseLinkedList(DoublyLinkedList list)
 	{
-		/*** *** Write YOUR CODE HERE *** ***/
+		
+		
+		DoublyLinkedList reverse = new DoublyLinkedList() ;
+		reverse.head = list.tail;
+		reverse.tail = reverse.head;
+		//reverse.head.previous = null;
+		//reverse.addNode(list.tail.data);
+		//reverse.head = list.tail;
+		Node temp = list.tail;
+		while(temp != list.head) {
+			temp = temp.previous;
+			int data = temp.data;
+			reverse.addNode(data);
+		}
+		//reverse.head = list.tail;
+		reverse.head.previous = null;
+		reverse.tail.next = null;
+		
+		list.head = reverse.head;
+		
 		
         
     }
@@ -24,27 +43,25 @@ public class LinkedListOperations {
 	 */
 	public boolean isPalindrome(DoublyLinkedList list)
 	{
-		boolean bool =true;
+		
 		Node beginning = list.head;
-		//Node end = list.tail;
-		int count =0;
-		/*** *** Write YOUR CODE HERE *** ***/
+		
 		if (beginning == null)
     	return true;
  
-    // Find rightmost node
-    Node end = beginning;
-    while (end.next != null)
-		end = end.next;
- 
-    while (beginning != end)
-    {
-        if (beginning.data != end.data)
-            return false;
- 
-		beginning = beginning.next;
-        end = end.previous;
-    }
+	    
+	    Node end = beginning;
+	    while (end.next != null)
+			end = end.next;
+	 
+	    while (beginning != end)
+	    {
+	        if (beginning.data != end.data)
+	            return false;
+	 
+			beginning = beginning.next;
+	        end = end.previous;
+	    }
 	 
 	    return true;
 	}
