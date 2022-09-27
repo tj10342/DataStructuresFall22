@@ -129,7 +129,7 @@ public class MinHeap {
     public static void buildMinHeap(int[] array, int size) {
 		
     	/*** *** Write YOUR CODE HERE *** ***/
-		
+    			
 	}
 	
     
