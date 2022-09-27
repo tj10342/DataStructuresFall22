@@ -54,11 +54,11 @@ public class DriverPA2 {
 		String fileName = "minheap0.txt";
 		prepareInputDataFromText(fileName);
 		
-		MinHeap_Solution minHeapObj = new MinHeap_Solution();
+		//MinHeap_Solution minHeapObj = new MinHeap_Solution();//I quoted out cuz caused an error
 		
 		// This result will be evaluated in Gradescope
-		String[] generatedResults = minHeapObj.MinHeapOperations(inputArray, newElementsArray, size);
-		
+		//String[] generatedResults = minHeapObj.MinHeapOperations(inputArray, newElementsArray, size);
+		//I quoted out cuz caused an error
 	}
 
 }
