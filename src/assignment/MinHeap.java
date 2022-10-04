@@ -72,7 +72,7 @@ public class MinHeap {
             array[1] = array[i];
             array[i] = temp;
             
-            downHeap(array, 1, i);
+            downHeap(array, 1, i-1);
         }
         
         return printMinHeapArray(array, n);
