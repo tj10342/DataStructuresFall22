@@ -129,6 +129,10 @@ public class MinHeap {
     public static void buildMinHeap(int[] array, int size) {
 		
     	/*** *** Write YOUR CODE HERE *** ***/
+    	for (int i=size/2;i>=1;i--) {
+    		downHeap(array,i,size);
+    	}
+    	
     			
 	}
 	
@@ -140,7 +144,22 @@ public class MinHeap {
     public static void downHeap(int arr[], int index, int size) {
 		
 		/*** *** Write YOUR CODE HERE *** ***/
+		int parent = index;
+		int leftChild = 2*index;
+		int rightChild = 2*index+1;
 		
+		if(leftChild<= size && arr[leftChild]<arr[parent]) {
+				parent = leftChild;
+			}
+			if(rightChild<= size && arr[rightChild]<arr[parent]) {
+				parent = rightChild;
+			}
+			if(parent != index) {
+				int temp = arr[index];
+				arr[index] = arr [parent];
+				arr [parent] = temp;
+				downHeap(arr, parent, size);
+			}
 	}
     
     /** 
@@ -150,7 +169,12 @@ public class MinHeap {
     public static void upHeap(int[] array, int size) {
 		
 		/*** *** Write YOUR CODE HERE *** ***/
-		
+    	while(size >1 && array[size] < array[size/2]) {
+    		int temp = array[size];
+    		array[size] = array[size/2];
+    		array[size/2] = temp;
+    		size = size/2;
+    	}
 	}
 
 }
