@@ -124,9 +124,24 @@ public class BSTOperations {
 	{
 		/*** *** Write YOUR CODE HERE *** ***/ 
 		// You can add additional methods if you need any
-	    
+		node = insertRecur(node, key);
+        
 	    
 	}
+	public  Node insertRecur(Node root, int key) { 
+        //tree is empty
+      if (root == null) { 
+          root = newNode(key); 
+          return root; 
+      } 
+      //traverse the tree
+      if (key < root.key)
+          root.left = insertRecur(root.left, key); 
+      else if (key > root.key)
+          root.right = insertRecur(root.right, key); 
+        // return "pointer"
+      return root; 
+  } 
 	 
 	
 	/**
@@ -137,10 +152,43 @@ public class BSTOperations {
 	{
 		/*** *** Write YOUR CODE HERE *** ***/ 
 		// You can add additional methods if you need any
-	        
+		bstRoot = deleteRecur(bstRoot, value);
 		return null;
 	    
 	}
+	Node deleteRecur(Node root, int key) {
+		if (root == null) 
+			return root; 
+		   
+        //traversing
+        if (key < root.key) 
+            root.left = deleteRecur(root.left, key); 
+        else if (key > root.key) 
+            root.right = deleteRecur(root.right, key); 
+        else  { 
+            // node contains only one child
+            if (root.left == null) 
+                return root.right; 
+            else if (root.right == null) 
+                return root.left; 
+   
+            root.key = minValue(root.right);
+            
+            root.right = deleteRecur(root.right, root.key); 
+        } 
+        return root;
+	}
+	//method to find minvalue of node leafs if there are two
+	int minValue(Node root)  { 
+        
+        int minval = root.key; 
+        
+        while (root.left != null)  { 
+            minval = root.left.key; 
+            root = root.left; 
+        } 
+        return minval; 
+    } 
 	
 	/**
      * Given the binary search tree and a key
@@ -149,10 +197,24 @@ public class BSTOperations {
 	 */
 	public Node search(Node root, int key)
 	{
+		root = searchrecur(root,key);
 		/*** *** Write YOUR CODE HERE *** ***/ 
 		// You can add additional methods if you need any
+		if( root!= null)
+			return root;
+		else return null;
 		
-		return null;
 	}
+	Node searchrecur(Node root, int key)  { 
+        // Base Cases: root is null or key is present at root 
+        if (root==null || root.key==key) 
+            return root; 
+        // val is greater than root's key 
+        if (root.key > key) 
+            return searchrecur(root.left, key); 
+        // val is less than root's key 
+        return searchrecur(root.right, key); 
+    } 
+	
 	
 }
