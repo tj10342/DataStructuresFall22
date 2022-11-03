@@ -51,7 +51,7 @@ public class DriverPA2 {
 	    
 		// Read the file and generate output
 		// Change the filename according to your need for testing purpose
-		String fileName = "minheap0.txt";
+		String fileName = "PA2/minheap0.txt";
 		prepareInputDataFromText(fileName);
 		
 		MinHeap minHeapObj = new MinHeap();//I quoted out cuz caused an error

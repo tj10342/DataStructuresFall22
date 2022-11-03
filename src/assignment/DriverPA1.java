@@ -41,7 +41,7 @@ public class DriverPA1 {
 	    
 		// Read the file and generate output
 		// Change the filename according to your need for testing purpose
-		String fileName = "DLL2.txt";
+		String fileName = "PA1/DLL2.txt";
 		prepareInputDataFromText(fileName);
 		
 		// Initialization
