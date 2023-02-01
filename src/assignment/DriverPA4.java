@@ -50,7 +50,7 @@ public class DriverPA4 {
 	    
 		// Read the file and generate output
 		// Change the filename according to your need for testing purpose
-		String fileName = "PA4/qs0.txt";
+		String fileName = "PA4/qs1.txt";
 		prepareInputDataFromText(fileName);
 		
 		QuickSort qs = new QuickSort();
